@@ -7,13 +7,7 @@ const validateEmail = (email)=>{
 }
 
 const productSchema = new mongoose.Schema({
-    email:{
-        type:String,
-        required:[true, "email is required"],
-        validate:{
-            validator:(value)=>validateEmail(value)
-        }
-    },
+
     product:{
         type:String,
         required:[true, "product name is required"]
@@ -21,6 +15,10 @@ const productSchema = new mongoose.Schema({
     cost:{
         type: Number,
         required:[true, "product cost is required"]
+    },
+    availablity:{
+        type: String,
+        required:[true, "Availablity is required"]
     },
     image:{
         type:String,
